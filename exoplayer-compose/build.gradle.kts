@@ -64,8 +64,8 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.ashmeet.arora"
-            artifactId = "ExoTest"
+            groupId = "com.github.AndroidAsh5"
+            artifactId = "ExoTestt"
             version = "1.0"
 
             afterEvaluate {
