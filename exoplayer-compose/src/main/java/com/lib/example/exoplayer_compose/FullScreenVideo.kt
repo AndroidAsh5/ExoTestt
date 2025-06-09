@@ -70,34 +70,34 @@ fun FullScreenVideo(
 /**
  *   can not using PlayerView here, conflict with legacy Ads sdk
  * A custom [PlayerView1] that handles full-screen mode.
- */
-@OptIn(UnstableApi::class)
-@Composable
-fun PlayerView(exoplayer: Player, modifier: Modifier) {
-    AndroidView(
-        factory = { context ->
-            PlayerView(context).apply {
-                player = exoplayer
-                setShowPreviousButton(false)
-                setShowNextButton(false)
-                setFullscreenButtonClickListener { isFullScreen ->
-                    if (isFullScreen) {
-                        context.requestedOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
-                    } else {
-                        context.requestedOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-                    }
-                }
-            }
-        },
-        modifier = modifier
-            .fillMaxWidth()
-            .heightIn(min = 250.dp)
-            .background(Color.Blue)
-    )
-}
-
-
-fun Context.requestedOrientation(orientation: Int) {
-    val activity = this.findActivity() ?: return
-    activity.requestedOrientation = orientation
-}
+// */
+//@OptIn(UnstableApi::class)
+//@Composable
+//fun PlayerView(exoplayer: Player, modifier: Modifier) {
+//    AndroidView(
+//        factory = { context ->
+//            PlayerView(context).apply {
+//                player = exoplayer
+//                setShowPreviousButton(false)
+//                setShowNextButton(false)
+//                setFullscreenButtonClickListener { isFullScreen ->
+//                    if (isFullScreen) {
+//                        context.requestedOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+//                    } else {
+//                        context.requestedOrientation(orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+//                    }
+//                }
+//            }
+//        },
+//        modifier = modifier
+//            .fillMaxWidth()
+//            .heightIn(min = 250.dp)
+//            .background(Color.Blue)
+//    )
+//}
+//
+//
+//fun Context.requestedOrientation(orientation: Int) {
+//    val activity = this.findActivity() ?: return
+//    activity.requestedOrientation = orientation
+//}

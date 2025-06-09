@@ -34,7 +34,7 @@ internal class FullScreenVideoActivity : ComponentActivity() {
             val c = VideoModel.random("1")
             val playerState = rememberPlayerState(true, c)
             val player = playerState.player
-            PlayerView(player!!,Modifier.fillMaxWidth())
+//            PlayerView(player!!,Modifier.fillMaxWidth())
         }
     }
 
